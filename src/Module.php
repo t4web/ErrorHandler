@@ -24,7 +24,7 @@ class Module implements ConfigProviderInterface, BootstrapListenerInterface
         }
 
         /** @var ErrorHandler $errorHandler */
-        $errorHandler = $serviceManager->get('ErrorHandler\ErrorHandler');
+        $errorHandler = $serviceManager->get(ErrorHandler::class);
 
         $mvcEvent->getApplication()->getEventManager()->attach(
             [
@@ -62,6 +62,6 @@ class Module implements ConfigProviderInterface, BootstrapListenerInterface
 
     public function getConfig()
     {
-        return include __DIR__ . '/config/module.config.php';
+        return include dirname(__DIR__) . '/config/module.config.php';
     }
 }
