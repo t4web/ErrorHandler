@@ -25,13 +25,14 @@ class ErrorHandler
     public function handleException(\Exception $e)
     {
         $this->logger->log(
+            'general',
             $e->getMessage(),
+            Logger::PRIORITY_ERR,
             [
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
                 'trace' => $e->getTrace(),
-            ],
-            Logger::PRIORITY_ERR
+            ]
         );
     }
 
