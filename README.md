@@ -48,4 +48,4 @@ public function indexAction()
 ```
 
 If you use `t4web\admin` in your logs you can see:
-![backend error handler log entries](http://teamforweb.com/var/admin-error-handler.jpg)
+![backend error handler log entries](http://teamforweb.com/var/admin-error-handler-1.jpg)
