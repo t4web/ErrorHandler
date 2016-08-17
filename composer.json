@@ -1,0 +1,35 @@
+{
+    "name": "t4web/error-handler",
+    "description": "ZF2 Module. For handle and log errors",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "zf2", "zf2 module", "error", "error handler"
+    ],
+    "homepage": "https://github.com/t4web/ErrorHandler",
+    "authors": [
+        {
+            "name": "sebaks",
+            "email": "d.kirillof@gmail.com"
+        },
+        {
+            "name": "Max Gulturyan",
+            "email": "gulturyan@gmail.com",
+            "homepage": "http://about.me/maxgu"
+        }
+    ],
+    "require": {
+        "php": "^5.5 || ^7.0",
+
+        "zendframework/zend-eventmanager": "^2.5",
+        "zendframework/zend-modulemanager": "^2.5",
+        "zendframework/zend-servicemanager": "^2.5",
+
+        "t4web/log": "~1.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "T4web\\ErrorHandler\\": "src/"
+        }
+    }
+}
