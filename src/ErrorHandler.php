@@ -3,7 +3,6 @@
 namespace T4web\ErrorHandler;
 
 use T4web\Log\Logger;
-use T4web\Log\Domain\Log\Log;
 
 class ErrorHandler
 {
@@ -32,7 +31,7 @@ class ErrorHandler
                 'line' => $e->getLine(),
                 'trace' => $e->getTrace(),
             ],
-            Log::PRIORITY_ERR
+            Logger::PRIORITY_ERR
         );
     }
 
@@ -84,10 +83,10 @@ class ErrorHandler
         $message = "Error PHP in file : ".$errfile." at line : ".$errline."
                 with type error : ".$typestr." : ".$errstr." in ".$_SERVER['REQUEST_URI'];
 
-        $priority = Log::PRIORITY_WARN;
+        $priority = Logger::PRIORITY_WARN;
 
         if (in_array($errno, [E_ERROR, E_USER_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR, E_RECOVERABLE_ERROR])) {
-            $priority = Log::PRIORITY_ERR;
+            $priority = Logger::PRIORITY_ERR;
         }
 
         $this->logger->log('general', $message, $priority);
